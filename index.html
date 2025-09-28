@@ -20,6 +20,7 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
       padding:2rem;
@@ -52,6 +53,10 @@
     }
 
     /* subtle scanline overlay to mimic CRT */
+    .scanlines{
+      position: relative;
+      display: inline-block;
+    }
     .scanlines::before{
       content:"";
       position:absolute;
@@ -66,7 +71,7 @@
     /* blinking cursor effect */
     .cursor{
       display:inline-block;
-      width:0.50ch;
+      width:0.30ch;
       margin-left:0.45rem;
       background:var(--retro-green);
       height:1.1em;
@@ -82,6 +87,26 @@
       font-size:clamp(0.9rem,3.5vw,1.25rem);
       color:rgba(57,255,20,0.9);
       opacity:0.95;
+    }
+
+    .footer{
+      margin-top:1.5rem;
+      text-align:center;
+      line-height:1.6;
+    }
+    .footer p{
+      font-size:0.7rem;
+      color:rgba(57,255,20,0.65);
+      margin-bottom:0.5rem;
+    }
+    .footer a{
+      color:var(--retro-green);
+      text-decoration:none;
+      display:block;
+      font-size:0.7rem;
+    }
+    .footer a:hover{
+      text-decoration:underline;
     }
 
     /* faint grid / vignette for vintage feel */
@@ -104,6 +129,11 @@
   <div class="frame" role="main" aria-labelledby="uc">
     <h1 id="uc" class="scanlines">Under Construction<span class="cursor" aria-hidden="true"></span></h1>
     <p>Maaf, halaman ini sedang dalam perbaikan — kembali lagi nanti.</p>
+  </div>
+  <div class="footer">
+    <p>Cek project kami yang lain:</p>
+    <a href="https://sppd.espeje.com" target="_blank">SPPD Online</a>
+    <a href="https://espeje.com" target="_blank">Desktop App eSPeJe 2025</a>
   </div>
   <div class="vignette" aria-hidden="true"></div>
 </body>
